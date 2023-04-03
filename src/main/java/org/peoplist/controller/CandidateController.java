@@ -41,9 +41,9 @@ public class CandidateController {
         return ResponseEntity.ok().build();
     }
     @CrossOrigin(originPatterns = "*")
-    @DeleteMapping(DELETE+"/{userId}")
-    public ResponseEntity<Void> deleteCandidate(@PathVariable("userId") Long userId){
-        candidateService.deleteCandidate(userId);
+    @DeleteMapping(DELETE+ID)
+    public ResponseEntity<Void> deleteCandidate(@PathVariable("id") Long id){
+        candidateService.deleteCandidate(id);
         return ResponseEntity.ok().build();
     }
 

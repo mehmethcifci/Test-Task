@@ -32,8 +32,8 @@ public class InteractionController {
     public ResponseEntity<InteractionResponseDto> updateCandidate(@RequestBody @Valid UpdateInteractionDto updateInteractionDto){
         return ResponseEntity.ok(interactionService.update(updateInteractionDto));
     }
-    @DeleteMapping(DELETE)
-    public ResponseEntity<Boolean> deleteCandidate(@RequestBody @Valid DeleteInteractionDto dto){
-        return ResponseEntity.ok(interactionService.deleteCandidate(dto.getId()));
+    @DeleteMapping(DELETE+ID)
+    public ResponseEntity<Boolean> deleteCandidate(@PathVariable("id") Long id){
+        return ResponseEntity.ok(interactionService.deleteCandidate(id));
     }
 }
